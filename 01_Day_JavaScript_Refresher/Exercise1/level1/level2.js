@@ -87,4 +87,18 @@ for (const user in users){
     
 }
 console.log(count)
-const user=new users
+const updateUser={
+    ...users,
+    myname:{
+        _id: 'ab12ex',
+        username: 'Alex',
+        email: 'alex@alex.com',
+        password: '123123',
+        createdAt: '08/01/2020 9:00 AM',
+        isLoggedIn: false,
+    }
+
+
+}
+console.log(Object.keys(users));
+console.log(Object.values(users));
