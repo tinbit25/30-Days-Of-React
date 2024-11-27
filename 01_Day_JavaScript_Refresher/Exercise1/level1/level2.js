@@ -79,26 +79,32 @@
 // }
 // console.log(count)
 
-count=0
-for (const user in users){
-    if(users[user].skills.includes('Express','MongoDB','React','Node')){
-        count++
-    }
+// count=0
+// for (const user in users){
+//     if(users[user].skills.includes('Express','MongoDB','React','Node')){
+//         count++
+//     }
     
-}
-console.log(count)
-const updateUser={
-    ...users,
-    myname:{
-        _id: 'ab12ex',
-        username: 'Alex',
-        email: 'alex@alex.com',
-        password: '123123',
-        createdAt: '08/01/2020 9:00 AM',
-        isLoggedIn: false,
-    }
+// }
+// console.log(count)
+// const updateUser={
+//     ...users,
+//     myname:{
+//         _id: 'ab12ex',
+//         username: 'Alex',
+//         email: 'alex@alex.com',
+//         password: '123123',
+//         createdAt: '08/01/2020 9:00 AM',
+//         isLoggedIn: false,
+//     }
 
 
+// }
+// console.log(Object.keys(users));
+// console.log(Object.values(users));
+for(const user in users){
+  const{email,skills,age,isLoggedIn,points}=users[user]
+  console.log(user)
+  console.log(email)
+
 }
-console.log(Object.keys(users));
-console.log(Object.values(users));
