@@ -10,6 +10,22 @@
 //    You are left with 3 years to drive.
 //    ```
 
+const readline = require('readline');
+
+const ages = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+ages.question('Enter your age: ', (age) => {
+    if (parseInt(age) > 18) {
+        console.log('You can drive');
+    } else {
+        console.log('You cannot drive');
+    }
+    ages.close(); 
+});
+
 // 1. Compare the values of myAge and yourAge using if … else. Based on the comparison and log the result to console stating who is older (me or you). Use prompt(“Enter your age:”) to get the age as input.
 
 //    ```sh
