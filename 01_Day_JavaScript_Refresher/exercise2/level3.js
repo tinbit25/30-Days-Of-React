@@ -7,7 +7,7 @@
 //   January has 31 day
 
 //   Enter a month: February
-//   February has 28 days.
+//   February has 28 days
 
 //   Enter a month: FEbruary
 //   February has 28 days.
