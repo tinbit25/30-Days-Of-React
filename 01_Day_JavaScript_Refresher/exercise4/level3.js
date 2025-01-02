@@ -29,62 +29,96 @@
 
 // Write a function called average, it takes an array parameter and returns the average of the items. Check if all the array items are number types. If not give return reasonable feedback.
 // Exercises: Level 3
-const userIdGeneratedByUser=()=>{
-    let numberOfCharacters=parseInt(prompt('Enter number of characters: '))
-    let numberOfIds=parseInt(prompt('Enter number of ids: '))
-    let result=''
-    for(let i=0;i<numberOfIds;i++){
-        let id=''
-        for(let j=0;j<numberOfCharacters;j++){
-            let randomChar=String.fromCharCode(Math.floor(Math.random()*25)+65)
-            id+=randomChar
+
+
+
+// const userIdGeneratedByUser=()=>{
+//     let numberOfCharacters=parseInt(prompt('Enter number of characters: '))
+//     let numberOfIds=parseInt(prompt('Enter number of ids: '))
+//     let result=''
+//     for(let i=0;i<numberOfIds;i++){
+//         let id=''
+//         for(let j=0;j<numberOfCharacters;j++){
+//             let randomChar=String.fromCharCode(Math.floor(Math.random()*25)+65)
+//             id+=randomChar
+//         }
+//         result+=id+'\n'
+//     }
+//     return result
+// }
+
+// const generateColors=(type,numberOfColors)=>{
+//     let result=[]
+//     if(type==='hexa'){
+//         for(let i=0;i<numberOfColors;i++){
+//             let color='#'
+//             for(let j=0;j<6;j++){
+//                 let randomChar=Math.floor(Math.random()*16).toString(16)
+//                 color+=randomChar
+//             }
+//             result.push(color)
+//         }}else if(type==='rgb'){
+//             for(let i=0;i<numberOfColors;i++){
+//                 let color='rgb('
+//                 for(let j=0;j<3;j++){
+//                     let randomNum=Math.floor(Math.random()*256)
+//                     color+=randomNum
+//                     if(j<2){
+//                         color+=', '
+//                     }else{
+//                         color+=')'
+//                     }
+//                 }
+//                 result.push(color)
+//             }
+//         }}
+
+// const shuffleArray=(arr)=>{
+//     let result=[]
+//     let arrCopy=[...arr]
+//     while(arrCopy.length>0){
+//         let randomChar=arrCopy[Math.floor(Math.random()*arrCopy.length)]
+//         result.push(randomChar)
+//         arrCopy.splice(arrCopy.indexOf(randomChar),1)
+
+
+//     }
+// }        
+// const factorial=(num)=>{
+//     let result=1
+//     for(let i=1;i<=num;i++){
+//         result*=i
+//     }
+//     return result
+// }
+// const isEmpty=(param)=>{
+//     if(param===0){
+//         return 'Empty'
+//     }
+//     if(param===''){
+//         return 'Empty'
+//     }
+//     if(param===null){
+//         return 'Empty'
+//     }
+//     if(param===undefined){
+//         return 'Empty'
+//     }
+//     if(param===false){
+//         return 'Empty'
+//     }
+//     if(param===NaN){
+//         return 'Empty'
+//     }
+//     return 'Not Empty'}
+const average=(arr)=>{
+    for(let i=0;i<arr.length;i++){
+        if(typeof arr[i]!=='number'){
+            return 'Array should contain only numbers'
         }
-        result+=id+'\n'
-    }
-    return result
-}
-
-const generateColors=(type,numberOfColors)=>{
-    let result=[]
-    if(type==='hexa'){
-        for(let i=0;i<numberOfColors;i++){
-            let color='#'
-            for(let j=0;j<6;j++){
-                let randomChar=Math.floor(Math.random()*16).toString(16)
-                color+=randomChar
-            }
-            result.push(color)
-        }}else if(type==='rgb'){
-            for(let i=0;i<numberOfColors;i++){
-                let color='rgb('
-                for(let j=0;j<3;j++){
-                    let randomNum=Math.floor(Math.random()*256)
-                    color+=randomNum
-                    if(j<2){
-                        color+=', '
-                    }else{
-                        color+=')'
-                    }
-                }
-                result.push(color)
-            }
-        }}
-
-const shuffleArray=(arr)=>{
-    let result=[]
-    let arrCopy=[...arr]
-    while(arrCopy.length>0){
-        let randomChar=arrCopy[Math.floor(Math.random()*arrCopy.length)]
-        result.push(randomChar)
-        arrCopy.splice(arrCopy.indexOf(randomChar),1)
-
-
-    }
-}        
-const factorial=(num)=>{
-    let result=1
-    for(let i=1;i<=num;i++){
-        result*=i
-    }
-    return result
-}
+    
+    else{
+    const total=arr.reduce((total,num)=>total+num,0)
+    const ave = total / arr.length;
+    return ave}}}
+console.log(average([1,2,3,4,5,6,7,8,9,10]))    
