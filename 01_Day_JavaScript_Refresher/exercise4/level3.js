@@ -69,3 +69,22 @@ const generateColors=(type,numberOfColors)=>{
                 result.push(color)
             }
         }}
+
+const shuffleArray=(arr)=>{
+    let result=[]
+    let arrCopy=[...arr]
+    while(arrCopy.length>0){
+        let randomChar=arrCopy[Math.floor(Math.random()*arrCopy.length)]
+        result.push(randomChar)
+        arrCopy.splice(arrCopy.indexOf(randomChar),1)
+
+
+    }
+}        
+const factorial=(num)=>{
+    let result=1
+    for(let i=1;i<=num;i++){
+        result*=i
+    }
+    return result
+}
