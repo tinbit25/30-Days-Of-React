@@ -27,3 +27,54 @@
 // Variance:  17.5
 // Standard Deviation:  4.2
 // Frequency Distribution: [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
+// // use the following datasets
+class Statistics {
+    constructor(data) {
+        this.data = data;
+    }
+    count() {
+        return this.data.length;
+    }
+    sum() {
+        return this.data.reduce((acc, cur) => acc + cur, 0);
+    }
+    min() {
+        return Math.min(...this.data);
+    }
+    max() {
+        return Math.max(...this.data);
+    }
+    range(){
+        return this.max() - this.min()
+    }
+    mean(){
+
+        return this.sum()/this.count()
+    }
+    median(){
+        let data = this.data.sort((a,b) => a - b);
+        let mid = Math.floor(data.length/2);
+        return data.length % 2 !== 0 ? data[mid] : (data[mid - 1] + data[mid]) / 2;
+    }
+    mode(){
+        let data = this.data;
+        let mode = data.sort((a,b) =>
+            data.filter(v => v===a).length
+            - data.filter(v => v===b).length
+        ).pop();
+        return {mode, count: data.filter(v => v===mode).length};
+    }
+    var(){
+        let mean = this.mean();
+        return this.data.reduce((acc, cur) => acc + Math.pow(cur - mean, 2), 0)/this.count();
+    }
+    std(){
+        return Math.sqrt(this.var());
+    }
+    freqDist(){
+        let data = this.data;
+        let unique = [...new Set(data)];
+        return unique.map(v => [data.filter(d => d === v).length, v]);
+    }
+    
+}
