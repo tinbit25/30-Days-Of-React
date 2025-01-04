@@ -21,6 +21,9 @@ class Dog extends Animal{
     dogSound(){
         return 'Woof Woof';
     }
+    getAnimalProperties() {
+        return `Name: ${this.name}, Age: ${this.age}, Color: ${this.color}, Legs: ${this.legs}, Sound: ${this.dogSound()}`;
+    }
 }
 class Cat extends Animal{
     constructor(name,age,color,legs){
@@ -32,3 +35,5 @@ class Cat extends Animal{
 }
 const dog = new Dog('Doggy', 2, 'Brown', 4);
 console.log(dog.getAnimalProperties());
+
+// Override the method you create in Animal class
