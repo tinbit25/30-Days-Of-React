@@ -1600,5 +1600,5 @@ Now, you have a very good understanding of how to create JSX elements and also h
 1. Practice how to make JSX element and injecting dynamic data(string, number, boolean, array, object)
 
 🎉 CONGRATULATIONS ! 🎉
-
+finish
 [<< Day 1](../01_Day_JavaScript_Refresher/01_javascript_refresher.md) | [Day 3 >>](../03_Day_Setting_Up/03_setting_up.md)
