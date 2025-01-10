@@ -52,6 +52,53 @@ const result = (
   </p>
 )
 
+// Inline styles
+const styles = {
+  grid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+    gap: '16px',
+    padding: '24px',
+  },
+  card: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '16px',
+    border: '1px solid #ccc',
+    borderRadius: '8px',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    fontWeight: '600',
+    fontSize: '16px',
+    textAlign: 'center',
+  },
+};
+// Define words array
+const words = [
+  'HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 
+  'Express', 'MongoDB', 'Python', 'Django', 'Git', 
+  'GitHub', 'Tailwind', 'Vite', 'Webpack'
+];
+
+// Define cards using inline styles and custom CSS classes
+const cards = (
+  <div style={styles.grid}>
+    {words.map((word, index)=>(
+      <div 
+        key={index}
+        style={{
+          ...styles.card,
+          backgroundColor: `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
+        }}
+      >
+       {word}
+      </div>
+    ))}
+  </div>
+);
+
+
+
 const yearBorn = 1820
 const currentYear = new Date().getFullYear()
 const age = currentYear - yearBorn
@@ -87,6 +134,7 @@ const main = (
       {result}
       {personAge}
       {user}
+      {cards}
     </div>
   </main>
 )
