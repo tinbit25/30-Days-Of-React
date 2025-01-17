@@ -17,7 +17,7 @@ const App = () => {
   const numbers = Array.from({ length: 32 }, (_, index) => index);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-800">
       <h1 className="text-4xl font-bold mb-4">30 Days Of React</h1>
       <h2 className="text-2xl font-medium mb-8">Number Generator</h2>
       <div className="grid grid-cols-8 gap-2">
